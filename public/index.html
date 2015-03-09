@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html ng-app="inquiry" ng-controller="MainCtrl">
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <link rel="stylesheet" href="js/common/bootstrap/dist/css/bootstrap.css"/>
+
+    <link rel="stylesheet" href="stylesheets/font-awesome.css"/>
+    <link rel="stylesheet" href="stylesheets/simple-sidebar.css"/>
+    <!--<link rel="stylesheet" href="stylesheets/default.css"/>-->
+    <link rel="stylesheet" href="stylesheets/component.css"/>
+    <link rel="stylesheet" href="stylesheets/pushbutton.css"/>
+    <link rel="stylesheet" href="stylesheets/ribbon.css"/>
+    <link rel="stylesheet" href="stylesheets/fakeLoader.css"/>
+
+    <style>
+
+
+        .carousel-control.left,.carousel-control.right {
+            display:none;
+        }
+        @font-face {
+            font-family: Roboto;
+            src: url('fonts/Roboto-Light.ttf');
+        }
+
+        @font-face {
+            font-family: Tangerine;
+            src: url('fonts/Tangerine_Regular.ttf');
+        }
+       body {
+            font-family: 'Roboto', cursive;
+
+        }
+        .custom{
+            font-family: 'Roboto', cursive;
+            font-size:12px;
+            font-weight: bold;
+        }
+        .custom1{
+
+            font-family: 'Tangerine', cursive;
+            font-size:40px;
+
+        }
+        .header-text-row {
+            color: white;
+            text-align: center;
+            text-shadow: 0 -1px 0 rgba(0, 0, 0, 1);
+            font-size: 15px;
+            font-weight: 700;
+            font-family: serif;
+        }
+        .icon-header-text-row {
+            color: white;
+            text-align: center;
+            font-size: 10px;;
+            font-weight: 700;
+            font-family: sans-serif;
+
+        }
+
+        .icon-header-text {
+            color:#2C64B4 ;
+            text-align: center;
+            font-weight: 700;
+            font-family:serif;
+            font-size:10px;
+
+        }
+        .input-group-addon{
+            background-color:#2C64B4;
+            border:1px solid #2C64B4;
+        }
+        .table-header{
+            font-family:serif;
+            font-weight: 700;
+            color:#2C64B4;
+            font-size:13px;
+
+        }
+        .table-data{
+            font-family:"lucida grande", tahoma, verdana, arial, sans-serif;
+            font-weight: 700;
+            color:#2C64B4;
+            font-size:12px;
+        }
+        .navbar-primary .navbar { background:#ffffff; border-bottom:none; }
+        .navbar-primary .navbar .nav > li > a {}
+        .navbar-primary .navbar .nav > li > a:hover {}
+        .navbar-primary .navbar .nav .active > a,.navbar .nav .active > a:hover {background-color: #ffffff;}
+        .navbar-primary .navbar .nav li > a .caret, .tnav .navbar .nav li > a:hover .caret {border-top-color: #fff;border-bottom-color: #fff;}
+        .navbar-primary .navbar .nav > li.dropdown.open.active > a:hover {}
+        .navbar-primary .navbar .nav > li.dropdown.open > a {color: #fff;background-color: #47a3da;border-color: #fff;}
+        .navbar-primary .navbar .nav > li.dropdown.open.active > a:hover .caret, .tnav .navbar .nav > li.dropdown.open > a .caret {border-top-color: #fff;}
+        .navbar-primary .navbar .navbar-brand {color:#fff;}
+        .navbar-primary .navbar .nav.pull-right {margin-left: 10px; margin-right: 0;}
+        .navbar-xs .navbar-primary .navbar { min-height:28px; height: 28px; }
+        .navbar-xs .navbar-primary .navbar .navbar-brand{ padding: 0px 12px;font-size: 16px;line-height: 25px; }
+        .navbar-xs .navbar-primary .navbar .navbar-nav > li > a {  padding-top: 0px; padding-bottom: 0px; line-height: 25px; }
+        .navbar-sm .navbar-primary .navbar { min-height:40px; height: 40px; }
+        .navbar-sm .navbar-primary .navbar .navbar-brand{ padding: 0px 12px;font-size: 16px;line-height: 25px; }
+        .navbar-sm .navbar-primary .navbar .navbar-nav > li > a {  padding-top: 0px; padding-bottom: 0px; line-height: 25px; }
+        .navbar-xs .navbar-toggle{
+            padding:0px 0px;
+
+        }
+        .navbar-sm .navbar-toggle{
+            padding:2px 2px;
+        }
+
+ body{
+     background-size: 100%;
+ }
+        .footer-thumbnail{
+            display: block;
+            padding:0px 1px;
+            line-height: 1.42857143;
+            background-color: rgba(255,255,255,0.6);
+            border-radius: 4px;
+            margin:0px 1px;
+            font-family:serif;
+            font-weight: 700;
+            color:#2C64B4;
+            position:fixed;
+            width:97%;
+
+            bottom:0px;
+            left:17px;
+        }
+        .transparent-background{
+            background-color: rgba(255,255,255,0.6);
+        }
+        .padding-left-zero{
+            padding-left:0px;
+        }
+        .padding-right-zero{
+            padding-right:0px;
+        }
+        .padding-top-zero{
+            padding-top:0px;
+        } .padding-bottom-zero{
+              padding-bottom:0px;
+        }
+        .hovermenu-thumbnail{
+
+            display: block;
+            padding: 4px;
+            margin-bottom: 20px;
+            line-height: 1.42857143;
+            background-color: #fff;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            -webkit-transition: all .2s ease-in-out;
+            -o-transition: all .2s ease-in-out;
+            transition: all .2s ease-in-out;
+            font-weight:700;
+            font-family: serif;
+            color:#2C64B4;
+            background-color: rgba(255,255,255,0.0);
+
+        }
+
+
+
+
+
+    </style>
+</head>
+<body ng-style="{'background-image':backgroundImage}" >
+
+<script src="js/common/jquery/dist/jquery.min.js"></script>
+<script src="js/common/fakeLoader.js"></script>
+<div class="fakeloader"></div>
+<script type="text/javascript">
+    $(".fakeloader").fakeLoader({
+
+        timeToHide:1200, //Time in milliseconds for fakeLoader disappear
+
+        zIndex:"999",//Default zIndex
+
+        //spinner:"spinner3",Options: 'spinner1', 'spinner2', 'spinner3', 'spinner4', 'spinner5', 'spinner6', 'spinner7'
+
+        bgColor:'rgba(39,39,39,0.9)'//Hex, RGB or RGBA colors
+
+        /*imagePath:"images/imageedit_6_9620137616.gif" *///If you want can you insert your custom image
+
+    });
+</script>
+<div class="container-fluid">
+ <div ng-include="'templates/header.html'"></div>
+ <div ng-include="'templates/subheader.html'"></div>
+ <div ui-view>No view present that time</div>
+ <div ng-include="'templates/footer.html'"></div>
+</div>
+<script src="js/common/bootstrap/dist/js/bootstrap.min.js"></script>
+<script src="js/common/angular/angular.min.js"></script>
+<script src="js/common/angular-ui-router/release/angular-ui-router.min.js"></script>
+<script src="js/common/angular-ui-bootstrap-bower/ui-bootstrap.min.js"></script>
+<script src="js/common/angular-ui-bootstrap-bower/ui-bootstrap-tpls.min.js"></script>
+<script src="js/common/angular-sanitize/angular-sanitize.min.js"></script>
+<script src="js/common/angular-mass-autocomplete/massautocomplete.min.js"></script>
+<script src="js/module/module.js"></script>
+<script src="js/config/config.js"></script>
+<script src="js/controller/maincontroller.js"></script>
+<script src="js/controller/homecontroller.js"></script>
+<script src="js/controller/aboutcontroller.js"></script>
+<script src="js/controller/newscontroller.js"></script>
+<script src="js/controller/contactcontroller.js"></script>
+<script src="js/controller/welcomecontroller.js"></script>
+<script src="js/controller/loginregistercontroller.js"></script>
+<script src="js/controller/rechargecontroller.js"></script>
+<script src="js/controller/bustaxiscontroller.js"></script>
+<script src="js/directive/directive.js"></script>
+<script src="//maps.google.com/maps/api/js"></script>
+<script src="js/common/ng-map.min.js"></script>
+<script src="js/controller/searchcontroller.js"></script>
+<script src="js/service/searchresultservice.js"></script>
+<script src="js/controller/recharge/datacardcontroller.js"></script>
+<script src="js/controller/recharge/dthcontroller.js"></script>
+<script src="js/controller/recharge/electricitycontroller.js"></script>
+<script src="js/controller/recharge/gascontroller.js"></script>
+<script src="js/controller/recharge/insuracecontroller.js"></script>
+<script src="js/controller/recharge/mobilepostpaidcontroller.js"></script>
+<script src="js/controller/recharge/mobileprepaidcontroller.js"></script>
+<script src="js/controller/recharge/landlinecontroller.js"></script>
+<script src="js/controller/logincontroller.js"></script>
+<script src="js/controller/signupcontroller.js"></script>
+
+
+
+</body>
+</html>

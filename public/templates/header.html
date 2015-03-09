@@ -1,0 +1,45 @@
+<div class="navbar navbar-default" style="background-color: white;margin-bottom:0px;">
+    <div class="navbar-header">
+        <button type="button" class="btn btn-default navbar-toggle" data-toggle="collapse" data-target="#custom">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+        </button>
+         <a href="#" class="navbar-brand" style="padding-top:0px;">
+
+             <img src="images/logo1.svg" class="img-responsive"/>
+         </a>
+    </div>
+    <div class="collapse navbar-collapse" id="custom">
+        <div class="btn-group navbar-btn btn-group-sm navbar-left">
+            <button type="button" class="btn btn-link"><span class="icon-header-text">WE ARE HIRING!!</span></button>
+
+        </div>
+        <div class="btn-group navbar-btn btn-group-sm navbar-right">
+           <button type="button" class="btn btn-link" ng-click="collapse.isSearchCollapsed=!collapse.isSearchCollapsed;collapse.isSignUpCollapsed=true;"><i class="fa fa-search" style="color:#2C64B4;"></i></button>
+        </div>
+        <button type="button" class="btn btn-default navbar-left btn-xs navbar-btn" ng-click="change('background2.jpg')">Image1</button>
+        <button type="button" class="btn btn-default navbar-left btn-xs navbar-btn" ng-click="change('background4.jpg')">Image2</button>
+        <button type="button" class="btn btn-default navbar-left btn-xs navbar-btn" ng-click="change('background5.jpg')">Image3</button>
+        <button type="button" class="btn btn-default navbar-left btn-xs navbar-btn" ng-click="change('Jootix.jpg')">Image4</button>
+        <button type="button" class="btn btn-default navbar-left btn-xs navbar-btn" ng-click="change('newyork.jpg')">Image5</button>
+        <button type="button" class="btn btn-default navbar-left btn-xs navbar-btn" ng-click="change('background3.jpg')">Image6</button>
+        <button type="button" class="btn btn-default navbar-left btn-xs navbar-btn" ng-click="change('scene1.jpg')">Image6</button>
+        <button type="button" class="btn btn-default navbar-left btn-xs navbar-btn" ng-click="change('scene2.jpg')">Image6</button>
+        <button type="button" class="btn btn-default navbar-left btn-xs navbar-btn" ng-click="change('none')">None</button>
+        <form class="navbar-form navbar-right">
+            <div class="form-group">
+                <input type="text" class="form-control input-sm" value="email" size="20"/>
+            </div>
+            <div class="form-group">
+                <input type="text" class="form-control input-sm" value="password" size="20"/>
+
+            </div>
+            <button type="button" class="btn btn-primary btn-sm">Login</button>
+            <button type="button" class="btn btn-primary btn-sm" ng-click="collapse.isSearchCollapsed=true;collapse.isSignUpCollapsed=!collapse.isSignUpCollapsed;">SignUp</button>
+        </form>
+    </div>
+
+</div>
+
