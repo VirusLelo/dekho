@@ -3,12 +3,12 @@
  */
 angular.module('inquiry').config(function($stateProvider, $urlRouterProvider){
 
-    $urlRouterProvider.otherwise('/about');
+    $urlRouterProvider.otherwise('/welcome');
     $stateProvider.state('home',{
         url:'/home',
         templateUrl:"templates/home.html",
         controller:'HomeCtrl'
-    })
+        })
         .state('about',{
             url:'/about',
          templateUrl:'templates/about.html',
@@ -46,19 +46,19 @@ angular.module('inquiry').config(function($stateProvider, $urlRouterProvider){
             templateUrl:'templates/bustaxis/bustaxis.html'
         })
         .state("mobileprepaid",{
-            url:'/mobileprepaid',
+            url:'/mobileprepaid/:servicename',
             controller:'MobilePrepaidCtrl',
             templateUrl:'templates/recharge/mobileprepaid.html'
         })
         .state("dth",{
-            url:'/dth',
-            controller:'DthCtrl',
-            templateUrl:'templates/recharge/dth.html'
+            url:'/dth/:servicename',
+            controller:'MobilePrepaidCtrl',
+            templateUrl:'templates/recharge/mobileprepaid.html'
         })
         .state("datacard",{
-            url:'/datacard',
-            controller:'DataCardCtrl',
-            templateUrl:'templates/recharge/datacard.html'
+            url:'/datacard/:servicename',
+            controller:'MobilePrepaidCtrl',
+            templateUrl:'templates/recharge/mobileprepaid.html'
         })
         .state("mobilepostpaid",{
             url:'/mobilepostpaid',
@@ -84,4 +84,28 @@ angular.module('inquiry').config(function($stateProvider, $urlRouterProvider){
             controller:'InsuranceCtrl',
             templateUrl:'templates/recharge/insurance.html'
         })
+        .state("search",{
+            url:'/search',
+            controller:'SearchCtrl',
+            templateUrl:'templates/search/search.html'
+        })
+        // route to show our basic form (/form)
+        .state('form', {
+            url: '/form',
+            controller: 'FormCtrl',
+            templateUrl: 'templates/multistepform/temp.html'
+        })
+        .state('form.profile', {
+            url: '/profile',
+            templateUrl: 'templates/multistepform/profile.html'
+        })
+        .state('form.interests', {
+            url: '/interests',
+            templateUrl: 'templates/multistepform/login.html'
+        })
+        .state('form.payment', {
+            url: '/payment',
+            templateUrl: 'templates/multistepform/amount.html'
+        });
+
 })

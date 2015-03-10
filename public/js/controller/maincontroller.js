@@ -14,6 +14,7 @@ angular.module('inquiry')
             $http.get(loc).success(function(data, status, headers, config){
                 console.log(data);
                 $scope.result=data;
+                $state.go('search');
             }).error(function(data, status, headers, config){
                 console.log(data);
             });
